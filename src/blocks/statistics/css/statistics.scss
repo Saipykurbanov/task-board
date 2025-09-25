@@ -1,2 +1,83 @@
 @use './../../../style/common';
 
+.statistic {
+    //INFO: Блок со статистикой
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    @include common.mediaMaxWidth(768) {
+        width: 100%;
+    }
+
+    .statistic_item {
+        position: relative;
+        height: 200px;
+        width: 310px;
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        align-items: center;
+        padding: 15px;
+        border-radius: var(--border-radius);
+        background-color: var(--grey);
+        gap: 10px;
+
+        @include common.mediaMaxWidth(768) {
+            width: 100%;
+        }
+
+        .diagramma {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .progress {
+                position: absolute;
+                top: 0;
+                left: 0;
+                min-width: 160px;
+                circle {
+                    fill: none;
+                    stroke: var(--green);
+                    stroke-width: 20px;
+                    stroke-linecap: round;
+                    transition: 0.5s;
+                }
+
+                &.full {
+                    circle {
+                        stroke: #a1a1a1;
+                    }
+                }
+            }
+
+            .procent {
+                font-size: 20px;
+            }
+        }
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            overflow: hidden;
+
+            h2 {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                font-weight: 700;
+                @include common.adaptiveFont(30, 20)
+            } 
+
+            p {
+                word-break: keep-all;
+                font-size: 14px;
+                
+            }
+        }
+    }
+}

@@ -15,7 +15,7 @@ const Form = () => {
 
     return (
         <div className={`form_wrapper`}>
-            <div className="form" ref={hook.formRef}>
+            <div className="form" ref={hook.formRef} onMouseDown={(e: any) => e.stopPropagation()}>
                 <Cross callback={hook.close}/>
                 <Input 
                     value={hook.inputs.title}

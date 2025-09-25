@@ -45,6 +45,24 @@ html,body{
 	scroll-behavior: smooth;
     color: var(--black);
     background-color: var(--white);
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: var(--grey);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--green);
+        border-radius: 10px;
+    }
+}
+
+body.modal {
+    overflow: hidden;
+
+    @include common.mediaMinWidth(992) {
+        padding-right: 10px;
+    }
 }
 
 input,button,textarea{font-family:inherit;}

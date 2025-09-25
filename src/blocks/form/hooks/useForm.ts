@@ -42,11 +42,11 @@ export default function useForm() {
             title: '',
             description: ''
         })
-        document.body.style.overflow = 'visible'
+        document.body.classList.remove('modal')
     }
 
     useListener('add_task_modal', (data: boolean) => {
-        document.body.style.overflow = 'hidden'
+        document.body.classList.add('modal')
         setOpen(data)
     })
 

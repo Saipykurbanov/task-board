@@ -1,2 +1,82 @@
 @charset "UTF-8";
-/*-------------Миксины----------------*//*# sourceMappingURL=statistics.css.map */
+/*-------------Миксины----------------*/
+.statistic {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+@media screen and (max-width: 768px) {
+  .statistic {
+    width: 100%;
+  }
+}
+.statistic .statistic_item {
+  position: relative;
+  height: 200px;
+  width: 310px;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  align-items: center;
+  padding: 15px;
+  border-radius: var(--border-radius);
+  background-color: var(--grey);
+  gap: 10px;
+}
+@media screen and (max-width: 768px) {
+  .statistic .statistic_item {
+    width: 100%;
+  }
+}
+.statistic .statistic_item .diagramma {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.statistic .statistic_item .diagramma .progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 160px;
+}
+.statistic .statistic_item .diagramma .progress circle {
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 20px;
+  stroke-linecap: round;
+  transition: 0.5s;
+}
+.statistic .statistic_item .diagramma .progress.full circle {
+  stroke: #a1a1a1;
+}
+.statistic .statistic_item .diagramma .procent {
+  font-size: 20px;
+}
+.statistic .statistic_item .description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+.statistic .statistic_item .description h2 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .statistic .statistic_item .description h2 {
+    font-size: calc(20px + 17 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .statistic .statistic_item .description h2 {
+    font-size: calc(20px + 10 * 0.0520833333vw);
+  }
+}
+.statistic .statistic_item .description p {
+  word-break: keep-all;
+  font-size: 14px;
+}/*# sourceMappingURL=statistics.css.map */

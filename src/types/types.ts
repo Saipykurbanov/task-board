@@ -28,3 +28,8 @@ export type TypeFIlterStore = {
     setFilter: (filter: TypeFilter) => void
 }
 
+export type TypeStatisticCount = {
+    active: number
+    completed: number
+    all: number
+}

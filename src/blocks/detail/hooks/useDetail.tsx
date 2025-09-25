@@ -44,7 +44,7 @@ export default function useDetail() {
             completed: false,
             created_at: ''
         })
-        document.body.style.overflow = 'visible'
+        document.body.classList.remove('modal')
     }
 
     const deleteTask = () => {
@@ -58,7 +58,7 @@ export default function useDetail() {
         //INFO: Открытие модалки
 
         setInputs(item)
-        document.body.style.overflow = 'hidden'
+        document.body.classList.add('modal')
         setOpen(true)
     })
 
