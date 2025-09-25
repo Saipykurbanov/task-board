@@ -1,22 +1,32 @@
-import { useCallback, useState } from "react"
-import { useListener } from "../../../utils/utils"
-import type { TypeTaskList } from "../../../types/types"
+import { useCallback, useEffect, useState } from "react"
+import { useTasksStore } from "../../../store/useTasks"
 
 
 export default function useStatistics() {
 
+    const tasks = useTasksStore(state => state.tasks)
+    const [count, setCount] = useState({
+        active: 0,
+        completed: 0
+    })
     
     const getCount = useCallback(() => {
         //INFO: Получение кол-ва активных задач
-
+        const active = tasks.filter(task => !task.completed)?.length
+        const completed = tasks?.length - active
+        setCount(prev => ({
+            ...prev, 
+            active,
+            completed
+        }))
     }, [])
 
-    const [count, setCount] = useState(() => getCount())
-
-    useListener('satistic', () => {
-        //INFO: Обновление данных
-        setCount(getCount())
-    })
+    console.log(count);
+    
+    
+    useEffect(() => {
+        getCount()
+    }, [tasks])
 
     return {
         count
