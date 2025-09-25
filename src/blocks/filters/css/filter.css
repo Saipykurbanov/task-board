@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.filter .filter_list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.filter .filter_item {
+  height: 30px;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--border-radius);
+  background-color: var(--grey);
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+}
+.filter .filter_item.active {
+  background-color: var(--green);
+}
+@media screen and (min-width: 992px) {
+  .filter .filter_item:hover {
+    background-color: var(--green);
+  }
+}/*# sourceMappingURL=filter.css.map */

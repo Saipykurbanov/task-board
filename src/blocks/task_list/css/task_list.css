@@ -1,0 +1,97 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.task_list_wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: auto;
+  height: 100%;
+  flex: 10;
+}
+.task_list_wrapper .no_items {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  animation: Open 0.3s forwards;
+}
+.task_list_wrapper .grid {
+  position: relative;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 150px 150px minmax(200px, 1fr) 180px;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--border-radius);
+  height: 54px;
+  background-color: var(--grey);
+  padding: 0 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  animation: Open 0.3s forwards;
+}
+@media screen and (min-width: 992px) {
+  .task_list_wrapper .grid:hover:not(.head) {
+    background-color: var(--black);
+  }
+  .task_list_wrapper .grid:hover:not(.head) .grid_item p {
+    color: var(--white);
+  }
+  .task_list_wrapper .grid:hover:not(.head) .grid_item .table_check_box {
+    border-color: var(--white);
+  }
+  .task_list_wrapper .grid:hover:not(.head) .grid_item .table_check_box:checked {
+    border-color: var(--green);
+  }
+}
+.task_list_wrapper .grid.head {
+  background-color: transparent;
+  cursor: default;
+}
+.task_list_wrapper .grid .grid_item {
+  position: relative;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.task_list_wrapper .grid .grid_item p {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--black);
+  transition: 0.3s;
+}
+@media (max-width: 768px) {
+  .task_list_wrapper .grid .grid_item p {
+    font-size: calc(14px + 3.4 * (100vw - 320px) / 1920);
+  }
+}
+@media (min-width: 768px) {
+  .task_list_wrapper .grid .grid_item p {
+    font-size: calc(14px + 2 * 0.0520833333vw);
+  }
+}
+.task_list_wrapper .grid .grid_item .table_check_box {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--black);
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0;
+  border-radius: 50% !important;
+}
+.task_list_wrapper .grid .grid_item .table_check_box:checked {
+  border-color: var(--green);
+  background-color: var(--green);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}/*# sourceMappingURL=task_list.css.map */

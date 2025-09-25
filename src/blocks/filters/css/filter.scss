@@ -1,0 +1,40 @@
+@use './../../../style/common';
+
+.filter {
+    //INFO: Блок с фильтром
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .filter_list {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .filter_item {
+        height: 30px;
+        width: max-content;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        border-radius: var(--border-radius);
+        background-color: var(--grey);
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 14px;
+
+        &.active {
+            background-color: var(--green);
+        }
+
+        @include common.mediaMinWidth(992) {
+            &:hover {
+                background-color: var(--green);
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.main_textarea {
+  position: relative;
+  width: 100%;
+}
+.main_textarea label {
+  color: var(--black);
+  font-size: 12px;
+  margin-bottom: 3px;
+  display: block;
+  padding-left: 10px;
+}
+.main_textarea textarea {
+  width: 100%;
+  background-color: var(--white);
+  color: var(--black);
+  padding: 10px;
+  font-size: 16px;
+  border-radius: var(--border-radius) !important;
+  resize: vertical;
+}/*# sourceMappingURL=textarea.css.map */

@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.main_button {
+  height: 30px;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--white);
+  background-color: var(--black);
+  font-size: 14px;
+  border-radius: var(--border-radius);
+  transition: 0.3s;
+}
+@media screen and (min-width: 992px) {
+  .main_button:hover {
+    background-color: var(--grey);
+    color: var(--black);
+  }
+}
+.main_button.red {
+  background-color: var(--red);
+}
+@media screen and (min-width: 992px) {
+  .main_button.red:hover {
+    background-color: var(--purple);
+    color: var(--black);
+  }
+}/*# sourceMappingURL=button.css.map */

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/*-------------Миксины----------------*/
+.main_checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.main_checkbox input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--black);
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0;
+  border-radius: 50% !important;
+}
+.main_checkbox input:checked {
+  border-color: var(--green);
+  background-color: var(--green);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}/*# sourceMappingURL=check_box.css.map */
