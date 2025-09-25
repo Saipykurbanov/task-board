@@ -1,5 +1,6 @@
 # React + TypeScript + Vite
 Установка всех зависимостей: npm install.
+
 Запуск проекта: npm run dev.
 
 
